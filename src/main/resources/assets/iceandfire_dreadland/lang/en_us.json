@@ -1,13 +1,5 @@
 {
-  "itemGroup.iceandfire_dreadland": "Example Mod Tab",
-  "block.iceandfire_dreadland.example_block": "Example Block",
-  "item.iceandfire_dreadland.example_item": "Example Item",
-
-  "iceandfire_dreadland.configuration.title": "Ice And Fire - Dread Land Configs",
-  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml": "Ice And Fire - Dread Land Configs",
-  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml.title": "Ice And Fire - Dread Land Configs",
-  "iceandfire_dreadland.configuration.items": "Item List",
-  "iceandfire_dreadland.configuration.logDirtBlock": "Log Dirt Block",
-  "iceandfire_dreadland.configuration.magicNumberIntroduction": "Magic Number Text",
-  "iceandfire_dreadland.configuration.magicNumber": "Magic Number"
+  "iceandfire_dreadland.configuration.title": "Ice And Fire - Dread Land 配置",
+  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml": "Ice And Fire - Dread Land 通用配置",
+  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml.title": "Ice And Fire - Dread Land 通用配置"
 }

@@ -1,6 +1,5 @@
 package com.zonlong.iceandfiredreadland;
 
-import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -10,22 +9,22 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
-// This class will not load on dedicated servers. Accessing client side code from here is safe.
+/**
+ * 客户端专用类
+ * 仅在物理客户端加载，不会在专用服务端加载。
+ * 所有访问客户端代码（如渲染、模型、GUI）的逻辑都应放在这里。
+ */
 @Mod(value = IceAndFireDreadLand.MODID, dist = Dist.CLIENT)
-// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
 @EventBusSubscriber(modid = IceAndFireDreadLand.MODID, value = Dist.CLIENT)
 public class IceAndFireDreadLandClient {
+
     public IceAndFireDreadLandClient(ModContainer container) {
-        // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
-        // Do not forget to add translations for your config options to the en_us.json file.
+        // 注册模组配置界面——玩家在模组列表点击本模组后可打开配置界面
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        IceAndFireDreadLand.LOGGER.info("HELLO FROM CLIENT SETUP");
-        IceAndFireDreadLand.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        IceAndFireDreadLand.LOGGER.info("Ice And Fire - Dread Land 客户端初始化完成");
     }
 }

@@ -79,7 +79,15 @@ A Ice and Fire addon that add Dread Land.
     # Side this dependency is applied on - BOTH, CLIENT, or SERVER
     side="BOTH"
 
-# Here's another dependency
+# Ice And Fire: Community Edition — 必要前置依赖
+[[dependencies.${mod_id}]]
+    modId="iceandfire"
+    type="required"
+    versionRange="[1.21.1,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Minecraft 依赖
 [[dependencies.${mod_id}]]
     modId="minecraft"
     type="required"
