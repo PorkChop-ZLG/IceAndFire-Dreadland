@@ -73,7 +73,7 @@
     ],
     [
       "iceandfire_dreadland:patch_fire",
-      "iceandfire_dreadland:trees_plains",
+      "minecraft:trees_plains",
       "iceandfire_dreadland:flower_plains",
       "iceandfire_dreadland:patch_dead_bush_plain"
     ],
