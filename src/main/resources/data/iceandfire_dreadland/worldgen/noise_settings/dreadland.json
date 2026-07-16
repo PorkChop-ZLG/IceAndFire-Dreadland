@@ -45,8 +45,13 @@
       "y_scale": 1
     },
     "temperature": {
-      "type": "minecraft:constant",
-      "argument": -1
+      "type": "minecraft:shifted_noise",
+      "noise": "minecraft:temperature",
+      "shift_x": "minecraft:shift_x",
+      "shift_y": 0.0,
+      "shift_z": "minecraft:shift_z",
+      "xz_scale": 0.25,
+      "y_scale": 0.0
     },
     "vegetation": {
       "type": "minecraft:shifted_noise",
@@ -690,6 +695,45 @@
                           }
                         },
                         {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "iceandfire_dreadland:fireland_plains",
+                              "iceandfire_dreadland:fireland_forest"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:water",
+                                  "offset": 0,
+                                  "surface_depth_multiplier": 0,
+                                  "add_stone_depth": false
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "iceandfire:chared_grass",
+                                    "Properties": {
+                                      "snowy": "false"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "iceandfire:chared_dirt"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
                           "type": "minecraft:sequence",
                           "sequence": [
                             {
@@ -967,6 +1011,43 @@
               "then_run": {
                 "type": "minecraft:sequence",
                 "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:biome",
+                      "biome_is": [
+                        "iceandfire_dreadland:fireland_plains",
+                        "iceandfire_dreadland:fireland_forest"
+                      ]
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:stone_depth",
+                            "offset": 0,
+                            "surface_type": "ceiling",
+                            "add_surface_depth": false,
+                            "secondary_depth_range": 0
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "iceandfire:chared_stone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "iceandfire:chared_gravel"
+                          }
+                        }
+                      ]
+                    }
+                  },
                   {
                     "type": "minecraft:condition",
                     "if_true": {
