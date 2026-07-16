@@ -73,11 +73,9 @@
     ],
     [
       "iceandfire_dreadland:patch_fire",
-      "minecraft:trees_plains",
+      "iceandfire_dreadland:trees_plains",
       "iceandfire_dreadland:flower_plains",
-      "iceandfire_dreadland:patch_dead_bush_plain",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal"
+      "iceandfire_dreadland:patch_dead_bush_plain"
     ],
     [
       "minecraft:freeze_top_layer"
