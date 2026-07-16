@@ -1,10 +1,10 @@
 {
-  "feature": "iceandfire_dreadland:patch_fire",
+  "feature": "iceandfire_dreadland:flower_plain",
   "placement": [
     {
       "type": "minecraft:noise_threshold_count",
-      "above_noise": 7,
-      "below_noise": 0,
+      "above_noise": 4,
+      "below_noise": 15,
       "noise_level": -0.8
     },
     {

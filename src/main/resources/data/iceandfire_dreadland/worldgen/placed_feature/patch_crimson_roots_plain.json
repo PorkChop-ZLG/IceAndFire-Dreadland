@@ -1,22 +1,18 @@
 {
-  "feature": "iceandfire_dreadland:patch_fire",
+  "feature": "iceandfire_dreadland:patch_crimson_roots",
   "placement": [
     {
       "type": "minecraft:noise_threshold_count",
-      "above_noise": 7,
-      "below_noise": 0,
+      "above_noise": 10,
+      "below_noise": 5,
       "noise_level": -0.8
-    },
-    {
-      "type": "minecraft:rarity_filter",
-      "chance": 32
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "MOTION_BLOCKING"
+      "heightmap": "WORLD_SURFACE_WG"
     },
     {
       "type": "minecraft:biome"

@@ -8,15 +8,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "minecraft:fire",
-              "Properties": {
-                "age": "0",
-                "east": "false",
-                "north": "false",
-                "south": "false",
-                "up": "false",
-                "west": "false"
-              }
+              "Name": "minecraft:crimson_roots"
             }
           }
         }
@@ -31,7 +23,7 @@
         }
       ]
     },
-    "tries": 96,
+    "tries": 32,
     "xz_spread": 7,
     "y_spread": 3
   }
