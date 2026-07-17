@@ -25,7 +25,9 @@
     [],
     [
       "iceandfire_dreadland:lake_lava_underground",
-      "iceandfire_dreadland:lake_lava_surface"
+      "iceandfire_dreadland:lake_lava_surface",
+      "iceandfire_dreadland:lake_water_underground",
+      "iceandfire_dreadland:lake_water_surface"
     ],
     [
       "minecraft:amethyst_geode"
@@ -69,16 +71,16 @@
     ],
     [],
     [
-      "iceandfire_dreadland:spring_lava"
+      "iceandfire_dreadland:spring_lava",
+      "iceandfire_dreadland:spring_water"
     ],
     [
+      "iceandfire_dreadland:patch_amethyst",
       "minecraft:trees_plains",
       "iceandfire_dreadland:flower_lightning_plains",
-      "iceandfire_dreadland:patch_dead_bush_plain"
+      "iceandfire_dreadland:patch_short_grass_plain"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
   "has_precipitation": true,
   "spawn_costs": {},
@@ -132,6 +134,12 @@
     ],
     "misc": [],
     "monster": [
+      {
+        "type": "minecraft:creeper",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 200
+      },
       {
         "type": "iceandfire:dread_thrall",
         "weight": 100,

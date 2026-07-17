@@ -25,7 +25,13 @@
       "iceandfire:frozen_stone",
       "iceandfire:frozen_cobblestone",
       "iceandfire:frozen_gravel",
-      "iceandfire:frozen_dirt_path"
+      "iceandfire:frozen_dirt_path",
+      "iceandfire:crackled_dirt",
+      "iceandfire:crackled_grass",
+      "iceandfire:crackled_stone",
+      "iceandfire:crackled_cobblestone",
+      "iceandfire:crackled_gravel",
+      "iceandfire:crackled_dirt_path"
     ]
   }
 }

@@ -77,9 +77,7 @@
       "iceandfire_dreadland:flower_fireland_plains",
       "iceandfire_dreadland:patch_dead_bush_plain"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
   "has_precipitation": true,
   "spawn_costs": {},
