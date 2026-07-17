@@ -31,9 +31,7 @@
     [],
     [
       "iceandfire_dreadland:lake_lava_underground",
-      "iceandfire_dreadland:lake_lava_surface",
-      "iceandfire_dreadland:lake_water_underground",
-      "iceandfire_dreadland:lake_water_surface"
+      "iceandfire_dreadland:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode"
