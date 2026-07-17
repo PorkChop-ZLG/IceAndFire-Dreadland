@@ -72,8 +72,9 @@
       "iceandfire_dreadland:spring_lava"
     ],
     [
+      "iceandfire_dreadland:patch_ice",
       "minecraft:trees_plains",
-      "iceandfire_dreadland:flower_plains",
+      "iceandfire_dreadland:flower_iceland_plains",
       "iceandfire_dreadland:patch_dead_bush_plain"
     ],
     [
