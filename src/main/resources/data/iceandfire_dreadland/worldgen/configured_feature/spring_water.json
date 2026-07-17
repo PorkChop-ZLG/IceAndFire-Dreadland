@@ -5,7 +5,7 @@
     "requires_block_below": true,
     "rock_count": 4,
     "state": {
-      "Name": "minecraft:ice",
+      "Name": "minecraft:water",
       "Properties": {
         "falling": "true"
       }

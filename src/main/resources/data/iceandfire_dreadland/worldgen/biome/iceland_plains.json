@@ -24,8 +24,8 @@
   "features": [
     [],
     [
-      "iceandfire_dreadland:lake_ice_underground",
-      "iceandfire_dreadland:lake_ice_surface"
+      "iceandfire_dreadland:lake_water_underground",
+      "iceandfire_dreadland:lake_water_surface"
     ],
     [
       "minecraft:amethyst_geode"
@@ -69,7 +69,7 @@
     ],
     [],
     [
-      "iceandfire_dreadland:spring_ice"
+      "iceandfire_dreadland:spring_water"
     ],
     [
       "iceandfire_dreadland:patch_ice",
