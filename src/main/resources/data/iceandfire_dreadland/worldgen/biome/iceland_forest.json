@@ -9,7 +9,7 @@
   "downfall": 0.9,
   "effects": {
     "fog_color": 13688040,
-    "foliage_color": 8103160,
+    "foliage_color": 9485567,
     "grass_color": 8103160,
     "mood_sound": {
       "block_search_extent": 8,
@@ -83,9 +83,7 @@
       "iceandfire_dreadland:flower_iceland_plains",
       "iceandfire_dreadland:patch_fern_forest"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
   "has_precipitation": true,
   "spawn_costs": {},
