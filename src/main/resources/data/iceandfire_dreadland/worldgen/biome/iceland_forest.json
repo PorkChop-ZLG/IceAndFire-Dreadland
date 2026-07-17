@@ -30,8 +30,8 @@
   "features": [
     [],
     [
-      "iceandfire_dreadland:lake_lava_underground",
-      "iceandfire_dreadland:lake_lava_surface"
+      "iceandfire_dreadland:lake_ice_underground",
+      "iceandfire_dreadland:lake_ice_surface"
     ],
     [
       "minecraft:amethyst_geode"
@@ -75,13 +75,13 @@
     ],
     [],
     [
-      "iceandfire_dreadland:spring_lava"
+      "iceandfire_dreadland:spring_ice"
     ],
     [
       "iceandfire_dreadland:patch_ice",
       "iceandfire_dreadland:trees_dreadwood_and_oak",
       "iceandfire_dreadland:flower_iceland_plains",
-      "iceandfire_dreadland:patch_dead_bush_forest"
+      "iceandfire_dreadland:patch_fern_forest"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -133,6 +133,12 @@
     ],
     "misc": [],
     "monster": [
+      {
+        "type": "minecraft:stray",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 200
+      },
       {
         "type": "iceandfire:dread_thrall",
         "weight": 100,

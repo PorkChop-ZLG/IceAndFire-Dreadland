@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:spring_feature",
+  "config": {
+    "hole_count": 1,
+    "requires_block_below": true,
+    "rock_count": 4,
+    "state": {
+      "Name": "minecraft:ice",
+      "Properties": {
+        "falling": "true"
+      }
+    },
+    "valid_blocks": [
+      "minecraft:stone",
+      "minecraft:granite",
+      "minecraft:diorite",
+      "minecraft:andesite",
+      "minecraft:deepslate",
+      "minecraft:tuff",
+      "minecraft:calcite",
+      "minecraft:dirt",
+      "iceandfire:dread_stone",
+      "iceandfire:frozen_dirt",
+      "iceandfire:frozen_grass",
+      "iceandfire:frozen_stone",
+      "iceandfire:frozen_cobblestone",
+      "iceandfire:frozen_gravel",
+      "iceandfire:frozen_dirt_path"
+    ]
+  }
+}
