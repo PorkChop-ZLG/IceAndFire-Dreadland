@@ -699,6 +699,10 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
+                              "iceandfire_dreadland:iceland_plains",
+                              "iceandfire_dreadland:iceland_forest",
+                              "iceandfire_dreadland:lightning_plains",
+                              "iceandfire_dreadland:lightning_forest",
                               "iceandfire_dreadland:fireland_plains",
                               "iceandfire_dreadland:fireland_forest"
                             ]
@@ -955,6 +959,10 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
+                              "iceandfire_dreadland:iceland_plains",
+                              "iceandfire_dreadland:iceland_forest",
+                              "iceandfire_dreadland:lightning_plains",
+                              "iceandfire_dreadland:lightning_forest",
                               "iceandfire_dreadland:fireland_plains",
                               "iceandfire_dreadland:fireland_forest"
                             ]
@@ -1020,6 +1028,10 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
+                        "iceandfire_dreadland:iceland_plains",
+                        "iceandfire_dreadland:iceland_forest",
+                        "iceandfire_dreadland:lightning_plains",
+                        "iceandfire_dreadland:lightning_forest",
                         "iceandfire_dreadland:fireland_plains",
                         "iceandfire_dreadland:fireland_forest"
                       ]
@@ -1105,6 +1117,10 @@
         "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
+            "iceandfire_dreadland:iceland_plains",
+            "iceandfire_dreadland:iceland_forest",
+            "iceandfire_dreadland:lightning_plains",
+            "iceandfire_dreadland:lightning_forest",
             "iceandfire_dreadland:fireland_plains",
             "iceandfire_dreadland:fireland_forest"
           ]
