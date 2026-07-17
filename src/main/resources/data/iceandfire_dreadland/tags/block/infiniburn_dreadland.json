@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:netherrack",
+    "minecraft:magma_block",
+    "minecraft:grass_block",
+    "minecraft:dirt",
+    "iceandfire:chared_dirt",
+    "iceandfire:chared_grass",
+    "iceandfire:chared_stone",
+    "iceandfire:chared_cobblestone",
+    "iceandfire:chared_gravel",
+    "iceandfire:chared_dirt_path"
+  ]
+}

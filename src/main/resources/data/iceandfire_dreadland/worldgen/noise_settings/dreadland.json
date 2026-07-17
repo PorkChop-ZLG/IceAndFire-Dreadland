@@ -699,8 +699,7 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "iceandfire_dreadland:iceland_plains",
-                              "iceandfire_dreadland:iceland_forest"
+                              "iceandfire_dreadland:iceland_plains"
                             ]
                           },
                           "then_run": {
@@ -726,8 +725,36 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "iceandfire_dreadland:lightning_plains",
-                              "iceandfire_dreadland:lightning_forest"
+                              "iceandfire_dreadland:iceland_forest"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:grass_block",
+                                  "Properties": {
+                                    "snowy": "false"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "iceandfire:frozen_dirt"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "iceandfire_dreadland:lightning_plains"
                             ]
                           },
                           "then_run": {
@@ -753,8 +780,36 @@
                           "if_true": {
                             "type": "minecraft:biome",
                             "biome_is": [
-                              "iceandfire_dreadland:fireland_plains",
-                              "iceandfire_dreadland:fireland_forest"
+                              "iceandfire_dreadland:lightning_forest"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:grass_block",
+                                  "Properties": {
+                                    "snowy": "false"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "iceandfire:crackled_dirt"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "iceandfire_dreadland:fireland_plains"
                             ]
                           },
                           "then_run": {
@@ -764,6 +819,35 @@
                                 "type": "minecraft:block",
                                 "result_state": {
                                   "Name": "iceandfire:chared_grass"
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "iceandfire:chared_dirt"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "iceandfire_dreadland:fireland_forest"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:grass_block",
+                                  "Properties": {
+                                    "snowy": "false"
+                                  }
                                 }
                               },
                               {

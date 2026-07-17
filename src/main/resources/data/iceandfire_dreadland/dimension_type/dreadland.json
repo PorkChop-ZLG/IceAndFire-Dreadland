@@ -11,7 +11,7 @@
   "ambient_light": 0,
   "logical_height": 256,
   "effects": "minecraft:overworld",
-  "infiniburn": "#minecraft:infiniburn_overworld",
+  "infiniburn": "#iceandfire_dreadland:infiniburn_dreadland",
   "min_y": -64,
   "height": 384,
   "monster_spawn_light_level": {

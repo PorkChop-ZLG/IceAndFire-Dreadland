@@ -4,15 +4,15 @@
     "default": "minecraft:oak_bees_0002",
     "features": [
       {
-        "chance": 0.2,
+        "chance": 0.1,
         "feature": "iceandfire_dreadland:dreadwood"
       },
       {
-        "chance": 0.1,
+        "chance": 0.05,
         "feature": "iceandfire_dreadland:dreadwood_large"
       },
       {
-        "chance": 0.1,
+        "chance": 0.2,
         "feature": "minecraft:fancy_oak_bees_0002"
       }
     ]
