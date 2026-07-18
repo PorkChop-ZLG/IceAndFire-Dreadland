@@ -2,7 +2,7 @@
 
 **日期:** 2026-07-18
 **状态:** 已批准
-**方案:** A — `@EventBusSubscriber` 独立事件处理器
+**方案:** A — `setVisualOnly(true)` + 手动 `thunderHit`，纯视觉闪电，零破坏
 
 ## 问题陈述
 
@@ -18,7 +18,8 @@ EntityJoinLevelEvent
     → 在服务端？
       → 在悚域维度？
         → 群系有 is_lightning 标签？
-          → 生成原版 LightningBolt
+          → 创建 LightningBolt，setVisualOnly(true)（无火焰/破坏）
+          → 手动调用 creeper.thunderHit()（精准转化为闪电苦力怕）
 ```
 
 ### 组件
@@ -36,8 +37,9 @@ EntityJoinLevelEvent
 4. 检查 `level.dimension()` 是否为 `ModDimensions.DREADLAND`
 5. 通过 `level.getBiome(entity.blockPosition()).is(ModBiomeTags.IS_LIGHTNING)` 检查群系
 6. 使用 `EntityType.LIGHTNING_BOLT.create(level)` 创建原版闪电
-7. `level.addFreshEntity(bolt)` 将闪电加入世界
-8. 原版机制自动处理：苦力怕 → 闪电苦力怕、物品破坏、火焰
+7. `bolt.setVisualOnly(true)` 关闭火焰/方块破坏/物品摧毁/实体伤害
+8. `level.addFreshEntity(bolt)` 将闪电加入世界（纯视觉特效）
+9. `creeper.thunderHit(serverLevel, bolt)` 手动精准触发苦力怕 → 闪电苦力怕
 
 ### 没有错误处理——所有异常情况都是静默跳过
 
@@ -50,13 +52,14 @@ EntityJoinLevelEvent
 
 - **使用 `EntityJoinLevelEvent` 而非 `FinalizeSpawnEvent`:** `EntityJoinLevelEvent` 比 `FinalizeSpawnEvent` 更早触发，且覆盖所有实体加入世界的方式（包括刷怪蛋、chunk 加载）
 - **使用原版 LightningBolt 而非自定义实体:** 无需额外渲染或网络同步，完全复用原版机制
+- **闪电零破坏:** 使用 `setVisualOnly(true)` + 手动 `thunderHit`，不产生火焰、不破坏方块、不摧毁物品，`thunderHit` 是 Entity public 方法无需反射
 - **TagKey 而非字符串内联:** 提取到 `ModBiomeTags` 常量类，匹配 IceAndFire-CE 模式，便于其他模块复用
 
 ## 非目标
 
 - 不在雷域群系添加持续闪电天气效果
 - 不修改苦力怕的 AI 或属性
-- 不阻止闪电破坏物品（使用原版行为）
+- 闪电不产生火焰、不破坏方块和物品
 
 ## 下一步
 

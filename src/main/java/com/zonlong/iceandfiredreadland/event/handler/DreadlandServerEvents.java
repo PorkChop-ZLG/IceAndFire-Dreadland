@@ -3,6 +3,7 @@ package com.zonlong.iceandfiredreadland.event.handler;
 import com.zonlong.iceandfiredreadland.IceAndFireDreadLand;
 import com.zonlong.iceandfiredreadland.registry.ModDimensions;
 import com.zonlong.iceandfiredreadland.registry.tag.ModBiomeTags;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.monster.Creeper;
@@ -21,9 +22,14 @@ public final class DreadlandServerEvents {
         if (!creeper.level().getBiome(creeper.blockPosition()).is(ModBiomeTags.IS_LIGHTNING)) return;
 
         LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(creeper.level());
-        if (bolt != null) {
-            bolt.moveTo(creeper.position());
-            creeper.level().addFreshEntity(bolt);
+        if (bolt == null) return;
+
+        bolt.setVisualOnly(true);
+        bolt.moveTo(creeper.position());
+        creeper.level().addFreshEntity(bolt);
+
+        if (creeper.level() instanceof ServerLevel serverLevel) {
+            creeper.thunderHit(serverLevel, bolt);
         }
     }
 }
