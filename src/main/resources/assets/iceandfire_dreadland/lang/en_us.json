@@ -1,5 +1,9 @@
 {
   "iceandfire_dreadland.configuration.title": "Ice And Fire - Dread Land 配置",
   "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml": "Ice And Fire - Dread Land 通用配置",
-  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml.title": "Ice And Fire - Dread Land 通用配置"
+  "iceandfire_dreadland.configuration.section.iceandfire_dreadland.common.toml.title": "Ice And Fire - Dread Land 通用配置",
+
+  "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire - Dread Land Blocks",
+  "block.iceandfire_dreadland.dread_portal": "Dread Portal",
+  "warning.iceandfire_dreadland.dreadland.not_complete": "The Dreadland is not yet complete."
 }
