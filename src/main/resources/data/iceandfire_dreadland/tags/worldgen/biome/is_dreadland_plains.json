@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "iceandfire_dreadland:dread_plains",
+    "iceandfire_dreadland:iceland_plains",
+    "iceandfire_dreadland:lightning_plains",
+    "iceandfire_dreadland:fireland_plains"
+  ]
+}

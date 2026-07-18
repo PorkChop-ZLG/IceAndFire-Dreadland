@@ -177,7 +177,20 @@
       }
     ],
     "water_ambient": [],
-    "water_creature": []
+    "water_creature": [
+      {
+        "type": "iceandfire:hippocampus",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 1
+      },
+      {
+        "type": "iceandfire:sea_serpent",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
+      }
+    ]
   },
   "temperature": -0.5
 }

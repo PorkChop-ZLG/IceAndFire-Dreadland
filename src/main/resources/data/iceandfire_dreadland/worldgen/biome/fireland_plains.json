@@ -135,37 +135,7 @@
         "type": "minecraft:blaze",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 200
-      },
-      {
-        "type": "iceandfire:dread_thrall",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "iceandfire:dread_ghoul",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "iceandfire:dread_beast",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "iceandfire:dread_lich",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "iceandfire:dread_knight",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 1
+        "weight": 100
       }
     ],
     "underground_water_creature": [
@@ -177,7 +147,20 @@
       }
     ],
     "water_ambient": [],
-    "water_creature": []
+    "water_creature": [
+      {
+        "type": "iceandfire:hippocampus",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 1
+      },
+      {
+        "type": "iceandfire:sea_serpent",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
+      }
+    ]
   },
   "temperature": 0.8
 }
