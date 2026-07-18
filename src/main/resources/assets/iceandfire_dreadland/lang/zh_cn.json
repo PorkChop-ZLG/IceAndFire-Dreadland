@@ -1,5 +1,12 @@
 {
-  "itemGroup.iceandfire_dreadland.blocks": "冰火传说：悚域 方块",
+  "biome.iceandfire_dreadland.dread_forest": "悚域森林",
+  "biome.iceandfire_dreadland.dread_plain": "悚域平原",
+  "biome.iceandfire_dreadland.fireland_forest": "火域森林",
+  "biome.iceandfire_dreadland.fireland_plains": "火域平原",
+  "biome.iceandfire_dreadland.iceland_forest": "冰域森林",
+  "biome.iceandfire_dreadland.iceland_plains": "冰域平原",
+  "biome.iceandfire_dreadland.lightning_forest": "雷域森林",
+  "biome.iceandfire_dreadland.lightning_plains": "雷域平原",
   "block.iceandfire_dreadland.dread_portal": "悚域传送门",
-  "warning.iceandfire_dreadland.dreadland.not_complete": "悚域尚未完工。"
+  "itemGroup.iceandfire_dreadland.blocks": "冰火传说 | 悚域"
 }

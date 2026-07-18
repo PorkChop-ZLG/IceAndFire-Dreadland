@@ -9,7 +9,6 @@ import com.zonlong.iceandfiredreadland.registry.ModDimensions;
 import com.zonlong.iceandfiredreadland.util.attachment.NeedUpdateData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
@@ -56,7 +55,6 @@ public class PortalData extends NeedUpdateData<LivingEntity> {
                 living.changeDimension(new DimensionTransition(dreadLand, living.position(), Vec3.ZERO, living.yHeadRot, living.getXRot(), DimensionTransition.PLAY_PORTAL_SOUND));
                 if (!dreadLand.getBlockState(living.blockPosition()).is(ModBlocks.DREAD_PORTAL.get()))
                     server.getStructureManager().get(ResourceLocation.fromNamespaceAndPath(IceAndFireDreadLand.MODID, "dread_exit_portal")).ifPresent(structureTemplate -> structureTemplate.placeInWorld(dreadLand, living.blockPosition().subtract(new BlockPos(2, 1, 2)), BlockPos.ZERO, new StructurePlaceSettings(), dreadLand.random, 2));
-                living.sendSystemMessage(Component.translatable("warning.iceandfire_dreadland.dreadland.not_complete"));
             }
         }
         if (world.getBlockState(living.blockPosition()).is(ModBlocks.DREAD_PORTAL.get())) {
