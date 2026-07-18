@@ -118,9 +118,11 @@ dependencies {
     // Ice And Fire: Community Edition — 本模组的核心前置依赖
     implementation "curse.maven:iceandfire-ce-1040076:8147245"
 
+    // Jupiter — 配置系统库，本模组的硬前置依赖
+    implementation "curse.maven:jupiter-1072905:7738312"
+
     // 本地运行时依赖 — 仅在 runClient/runServer 时加载，不会随模组发布
     // 这些模组是本模组在本地开发测试时需要的前置模组，但不声明为硬依赖
-    localRuntime "blank:jupiter:2.3.7-1.21.1-neoforge"
     localRuntime "blank:uranus:2.4.1-1.21.1-neoforge"
 
     // Example optional mod dependency with JEI

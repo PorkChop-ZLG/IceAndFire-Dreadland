@@ -8,5 +8,9 @@
   "biome.iceandfire_dreadland.lightning_forest": "Lightning Forest",
   "biome.iceandfire_dreadland.lightning_plains": "Lightning Plains",
   "block.iceandfire_dreadland.dread_portal": "Dread Portal",
-  "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire | Dread Land"
+  "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire | Dread Land",
+
+  "config.iceandfire_dreadland.common.title": "Ice And Fire: Dread Land - Config",
+  "config.iceandfire_dreadland.category.common": "Common",
+  "config.iceandfire_dreadland.portalTeleportTick": "Dread Portal Teleport Delay (ticks)"
 }

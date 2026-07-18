@@ -3,6 +3,7 @@ package com.zonlong.iceandfiredreadland.data.component;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.zonlong.iceandfiredreadland.IceAndFireDreadLand;
+import com.zonlong.iceandfiredreadland.config.ModCommonConfig;
 import com.zonlong.iceandfiredreadland.registry.ModAttachments;
 import com.zonlong.iceandfiredreadland.registry.ModBlocks;
 import com.zonlong.iceandfiredreadland.registry.ModDimensions;
@@ -59,7 +60,7 @@ public class PortalData extends NeedUpdateData<LivingEntity> {
         }
         if (world.getBlockState(living.blockPosition()).is(ModBlocks.DREAD_PORTAL.get())) {
             if (this.getTeleportTick() > 0) this.setTeleportTick(this.getTeleportTick() - 1);
-            else if (this.getTeleportTick() == -1) this.setTeleportTick(100);
+            else if (this.getTeleportTick() == -1) this.setTeleportTick(ModCommonConfig.INSTANCE.portalTeleportTick.getValue());
         } else {
             this.setTeleported(false);
             this.setTeleportTick(-1);

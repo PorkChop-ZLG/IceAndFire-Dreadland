@@ -1,5 +1,8 @@
 package com.zonlong.iceandfiredreadland;
 
+import com.iafenvoy.jupiter.ConfigManager;
+import com.iafenvoy.jupiter.ServerConfigManager;
+import com.zonlong.iceandfiredreadland.config.ModCommonConfig;
 import com.zonlong.iceandfiredreadland.registry.ModAttachments;
 import com.zonlong.iceandfiredreadland.registry.ModBlockEntities;
 import com.zonlong.iceandfiredreadland.registry.ModBlocks;
@@ -13,7 +16,6 @@ import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -41,8 +43,9 @@ public class IceAndFireDreadLand {
         // 注册自身到游戏事件总线，用于处理服务端启动等游戏事件
         NeoForge.EVENT_BUS.register(this);
 
-        // 加载模组配置文件
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        // Jupiter 配置系统
+        ConfigManager.getInstance().registerConfigHandler(ModCommonConfig.INSTANCE);
+        ServerConfigManager.registerServerConfig(ModCommonConfig.INSTANCE, ServerConfigManager.PermissionChecker.IS_OPERATOR);
     }
 
     // === 生命周期事件 ===

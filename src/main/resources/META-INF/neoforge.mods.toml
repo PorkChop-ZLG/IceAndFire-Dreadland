@@ -87,6 +87,14 @@ config="${mod_id}.mixins.json"
     ordering="AFTER"
     side="BOTH"
 
+# Jupiter — 配置系统库，必要前置依赖
+[[dependencies.${mod_id}]]
+    modId="jupiter"
+    type="required"
+    versionRange="[2.3.7,)"
+    ordering="NONE"
+    side="BOTH"
+
 # Minecraft 依赖
 [[dependencies.${mod_id}]]
     modId="minecraft"

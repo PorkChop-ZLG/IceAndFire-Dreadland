@@ -8,5 +8,9 @@
   "biome.iceandfire_dreadland.lightning_forest": "雷域森林",
   "biome.iceandfire_dreadland.lightning_plains": "雷域平原",
   "block.iceandfire_dreadland.dread_portal": "悚域传送门",
-  "itemGroup.iceandfire_dreadland.blocks": "冰火传说 | 悚域"
+  "itemGroup.iceandfire_dreadland.blocks": "冰火传说 | 悚域",
+
+  "config.iceandfire_dreadland.common.title": "冰火传说：悚域 - 配置",
+  "config.iceandfire_dreadland.category.common": "通用",
+  "config.iceandfire_dreadland.portalTeleportTick": "悚域传送门传送等待时间（tick）"
 }
