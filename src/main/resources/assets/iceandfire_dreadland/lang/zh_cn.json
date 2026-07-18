@@ -12,5 +12,7 @@
 
   "config.iceandfire_dreadland.common.title": "冰火传说：悚域 - 配置",
   "config.iceandfire_dreadland.category.common": "通用",
-  "config.iceandfire_dreadland.portalTeleportTick": "悚域传送门传送等待时间（tick）"
+  "config.iceandfire_dreadland.category.lightning": "雷域",
+  "config.iceandfire_dreadland.portalTeleportTick": "悚域传送门传送等待时间（tick）",
+  "config.iceandfire_dreadland.lightningDestructive": "强化雷域雷暴：闪电更加密集，产生火焰和破坏物品/方块"
 }

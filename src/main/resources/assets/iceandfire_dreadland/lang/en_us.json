@@ -12,5 +12,7 @@
 
   "config.iceandfire_dreadland.common.title": "Ice And Fire: Dread Land - Config",
   "config.iceandfire_dreadland.category.common": "Common",
-  "config.iceandfire_dreadland.portalTeleportTick": "Dread Portal Teleport Delay (ticks)"
+  "config.iceandfire_dreadland.category.lightning": "Lightning",
+  "config.iceandfire_dreadland.portalTeleportTick": "Dread Portal Teleport Delay (ticks)",
+  "config.iceandfire_dreadland.lightningDestructive": "Destructive Thunderstorm: More lightning, Fire/Block/Item destruction"
 }
