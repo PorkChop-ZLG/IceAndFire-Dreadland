@@ -1,5 +1,7 @@
 package com.zonlong.iceandfiredreadland;
 
+import com.iafenvoy.jupiter.render.screen.ConfigSelectScreen;
+import com.zonlong.iceandfiredreadland.config.ModCommonConfig;
 import com.zonlong.iceandfiredreadland.particle.DreadPortalParticle;
 import com.zonlong.iceandfiredreadland.registry.ModBlockEntities;
 import com.zonlong.iceandfiredreadland.registry.ModParticles;
@@ -7,17 +9,18 @@ import com.zonlong.iceandfiredreadland.render.DreadPortalBlockEntityRenderer;
 import com.zonlong.iceandfiredreadland.render.RenderVariables;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.RegisterShadersEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 import java.io.IOException;
@@ -32,8 +35,12 @@ import java.io.IOException;
 public class IceAndFireDreadLandClient {
 
     public IceAndFireDreadLandClient(ModContainer container) {
-        // 注册模组配置界面——玩家在模组列表点击本模组后可打开配置界面
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        // Jupiter 配置界面 — 点击模组列表的配置按钮时显示
+        ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class,
+                () -> (container1, parent) -> ConfigSelectScreen.builder(
+                        Component.translatable("config.iceandfire_dreadland.common.title"), parent)
+                        .server(ModCommonConfig.INSTANCE)
+                        .build());
     }
 
     @SubscribeEvent
