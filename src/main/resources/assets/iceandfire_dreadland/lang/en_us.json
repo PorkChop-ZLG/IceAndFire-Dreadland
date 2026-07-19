@@ -14,5 +14,10 @@
   "config.iceandfire_dreadland.category.common": "Common",
   "config.iceandfire_dreadland.category.lightning": "Lightning",
   "config.iceandfire_dreadland.portalTeleportTick": "Dread Portal Teleport Delay (ticks)",
-  "config.iceandfire_dreadland.lightningDestructive": "Destructive Thunderstorm: More lightning, Fire/Block/Item destruction"
+  "config.iceandfire_dreadland.lightningDestructive": "Destructive Thunderstorm: More lightning, Fire/Block/Item destruction",
+
+  "item.iceandfire_dreadland.fireland_key": "Fireland Key",
+  "item.iceandfire_dreadland.iceland_key": "Iceland Key",
+  "item.iceandfire_dreadland.lightning_key": "Lightning Key",
+  "item.iceandfire_dreadland.dreadland_key": "Dreadland Key"
 }
