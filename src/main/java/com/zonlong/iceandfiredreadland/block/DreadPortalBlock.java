@@ -33,8 +33,6 @@ public class DreadPortalBlock extends BaseEntityBlock implements DreadBlock {
     private static final MapCodec<? extends BaseEntityBlock> CODEC = simpleCodec(s -> new DreadPortalBlock());
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     public static final BooleanProperty FRAME_BOUND = BooleanProperty.create("frame_bound");
-    private static final VoxelShape X_AXIS_SHAPE = Block.box(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
-    private static final VoxelShape Z_AXIS_SHAPE = Block.box(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
     public DreadPortalBlock() {
         super(Properties.of()
@@ -48,16 +46,6 @@ public class DreadPortalBlock extends BaseEntityBlock implements DreadBlock {
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(AXIS, Direction.Axis.X)
                 .setValue(FRAME_BOUND, false));
-    }
-
-    @Override
-    protected @NotNull VoxelShape getShape(
-            @NotNull BlockState state,
-            @NotNull BlockGetter level,
-            @NotNull BlockPos pos,
-            @NotNull CollisionContext context
-    ) {
-        return state.getValue(AXIS) == Direction.Axis.Z ? Z_AXIS_SHAPE : X_AXIS_SHAPE;
     }
 
     @Override
