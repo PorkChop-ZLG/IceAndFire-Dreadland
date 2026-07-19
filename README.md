@@ -27,15 +27,21 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 ### 悚域传送门
 
 - 添加方块：`iceandfire_dreadland:dread_portal`。
-- 传送门可以直接放置，不需要额外的构造框架。
+- 使用 `#iceandfire_dreadland:dreadland_portal_frame` 标签中的方块搭建竖直矩形框架，默认框架方块为 `iceandfire:dread_stone`。
+- 框架遵循原版下界传送门尺寸规则：内部宽度为 2-21 格、内部高度为 3-21 格，四个角可以省略。
+- 同一个框架可以混合使用标签中的不同方块；数据包可以向该标签追加兼容方块。
+- 使用悚域之钥右键框架朝向内部空间的一面即可激活。成功激活后，生存模式消耗一把钥匙，创造模式不消耗。
+- 由钥匙生成的传送门依赖框架存在；框架被破坏后，内部传送门方块会联动消失。
+- 创造模式直接放置的传送门方块以及已有出口结构中的传送门不依赖框架，继续保持原有行为。
 - 生物站在传送门方块内时开始倒计时，默认等待 `100` tick，即约 5 秒。
 - 非悚域维度中的生物会被传送到悚域；悚域中的生物会返回主世界。
 - 生物抵达悚域后，如果目标位置不是传送门，会自动放置悚域出口结构。
 - 传送门包含自定义方块实体渲染、粒子效果、纹理和 Shader 效果。
 
-当前版本没有提供传送门合成配方，可以通过创造模式物品栏或命令获取：
+当前版本没有提供钥匙和传送门的合成配方，可以通过创造模式物品栏或命令获取：
 
 ```mcfunction
+/give @s iceandfire_dreadland:dreadland_key
 /give @s iceandfire_dreadland:dread_portal
 ```
 
@@ -65,7 +71,7 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 1. 安装 Minecraft `1.21.1` 和对应的 NeoForge。
 2. 将 Ice And Fire: Community Edition、Jupiter 和本模组的 `.jar` 文件放入 `mods` 文件夹。
 3. 使用 NeoForge 配置启动游戏。
-4. 进入世界后，从创造模式物品栏获取悚域传送门，或使用上面的 `/give` 命令。
+4. 进入世界后，从创造模式物品栏获取悚域之钥和传送门，或使用上面的 `/give` 命令。
 
 ## 配置
 

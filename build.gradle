@@ -116,7 +116,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
     // Ice And Fire: Community Edition — 本模组的核心前置依赖
-    implementation "curse.maven:iceandfire-ce-1040076:8147245"
+    implementation "curse.maven:iceandfire-ce-1040076:8457180"
 
     // Jupiter — 配置系统库，本模组的硬前置依赖
     implementation "curse.maven:jupiter-1072905:7738312"
