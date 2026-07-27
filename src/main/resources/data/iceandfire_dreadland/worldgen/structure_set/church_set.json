@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 202607272052,
+    "separation": 10,
+    "spacing": 30
+  },
+  "structures": [
+    {
+      "structure": "iceandfire_dreadland:ice_church",
+      "weight": 1
+    }
+  ]
+}

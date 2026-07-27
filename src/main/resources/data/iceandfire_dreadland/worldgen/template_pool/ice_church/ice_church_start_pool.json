@@ -1,5 +1,5 @@
 {
-  "name": "iceandfire_dreadland:ice_church_start_pool",
+  "name": "iceandfire_dreadland:ice_church/ice_church_start_pool",
   "fallback": "minecraft:empty",
   "elements": [
     {
