@@ -2,7 +2,19 @@
   "type": "minecraft:jigsaw",
   "biomes": "#iceandfire_dreadland:has_structure/ice_church",
   "step": "surface_structures",
-  "spawn_overrides": {},
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "full",
+      "spawns": [
+        {
+          "type": "iceandfire:dread_lich",
+          "maxCount": 3,
+          "minCount": 1,
+          "weight": 10
+        }
+      ]
+    }
+  },
   "start_pool": "iceandfire_dreadland:ice_church/ice_church_start_pool",
   "size": 3,
   "terrain_adaptation": "beard_thin",
