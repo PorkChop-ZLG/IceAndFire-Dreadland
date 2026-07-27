@@ -8,7 +8,7 @@
   "biome.iceandfire_dreadland.lightning_forest": "雷域森林",
   "biome.iceandfire_dreadland.lightning_plains": "雷域平原",
   "block.iceandfire_dreadland.dread_portal": "悚域传送门",
-  "itemGroup.iceandfire_dreadland.blocks": "冰火传说 | 悚域",
+  "itemGroup.iceandfire_dreadland.blocks": "冰火传说：悚域",
 
   "config.iceandfire_dreadland.common.title": "冰火传说：悚域 - 配置",
   "config.iceandfire_dreadland.category.common": "通用",
@@ -19,5 +19,6 @@
   "item.iceandfire_dreadland.fireland_key": "火域之钥",
   "item.iceandfire_dreadland.iceland_key": "冰域之钥",
   "item.iceandfire_dreadland.lightning_key": "雷域之钥",
-  "item.iceandfire_dreadland.dreadland_key": "悚域之钥"
+  "item.iceandfire_dreadland.dreadland_key": "悚域之钥",
+  "entity.iceandfire_dreadland.fire_church_pastor": "火焰教堂牧师"
 }

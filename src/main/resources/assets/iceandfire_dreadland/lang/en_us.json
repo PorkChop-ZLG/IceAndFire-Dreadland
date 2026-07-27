@@ -8,7 +8,7 @@
   "biome.iceandfire_dreadland.lightning_forest": "Lightning Forest",
   "biome.iceandfire_dreadland.lightning_plains": "Lightning Plains",
   "block.iceandfire_dreadland.dread_portal": "Dread Portal",
-  "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire | Dread Land",
+  "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire: Dread Land",
 
   "config.iceandfire_dreadland.common.title": "Ice And Fire: Dread Land - Config",
   "config.iceandfire_dreadland.category.common": "Common",
@@ -19,5 +19,6 @@
   "item.iceandfire_dreadland.fireland_key": "Fireland Key",
   "item.iceandfire_dreadland.iceland_key": "Iceland Key",
   "item.iceandfire_dreadland.lightning_key": "Lightning Key",
-  "item.iceandfire_dreadland.dreadland_key": "Dreadland Key"
+  "item.iceandfire_dreadland.dreadland_key": "Dreadland Key",
+  "entity.iceandfire_dreadland.fire_church_pastor": "Fire Church Pastor"
 }
