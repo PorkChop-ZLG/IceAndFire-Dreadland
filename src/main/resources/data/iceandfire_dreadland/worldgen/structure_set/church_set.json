@@ -9,6 +9,14 @@
     {
       "structure": "iceandfire_dreadland:ice_church",
       "weight": 1
+    },
+    {
+      "structure": "iceandfire_dreadland:fire_church",
+      "weight": 1
+    },
+    {
+      "structure": "iceandfire_dreadland:lightning_church",
+      "weight": 1
     }
   ]
 }
