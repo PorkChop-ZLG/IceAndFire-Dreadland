@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "iceandfire:dread_stone"
+    "iceandfire:dread_stone",
+    "iceandfire:dread_stone_bricks",
+    "iceandfire:dread_stone_bricks_chiseled",
+    "iceandfire:dread_stone_tile"
   ]
 }

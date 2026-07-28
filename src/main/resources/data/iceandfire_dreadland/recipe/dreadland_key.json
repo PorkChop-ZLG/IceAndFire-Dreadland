@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "iceandfire_dreadland:iceland_key"
+    },
+    {
+      "item": "iceandfire_dreadland:fireland_key"
+    },
+    {
+      "item": "iceandfire_dreadland:lightning_key"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "iceandfire_dreadland:dreadland_key"
+  }
+}
