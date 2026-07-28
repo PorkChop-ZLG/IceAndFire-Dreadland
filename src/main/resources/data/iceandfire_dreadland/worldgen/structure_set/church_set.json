@@ -1,9 +1,13 @@
 {
   "placement": {
     "type": "minecraft:random_spread",
-    "salt": 202607272052,
+    "salt": 2026072821,
     "separation": 10,
-    "spacing": 30
+    "spacing": 20,
+    "exclusion_zone": {
+      "chunk_count": 10,
+      "other_set": "iceandfire:dragon_roost"
+    }
   },
   "structures": [
     {

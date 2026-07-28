@@ -21,13 +21,13 @@
   "entity.iceandfire_dreadland.lightning_church_pastor": "Lightning Church Pastor",
 
   "item.iceandfire_dreadland.dreadland_key": "Dreadland Key",
-  "item.iceandfire_dreadland.dreadland_key.tooltip": "",
+  "item.iceandfire_dreadland.dreadland_key.tooltip": "As dread sweeps across the mortal realm once more, has the savior of legend finally appeared?",
   "item.iceandfire_dreadland.fireland_key": "Fireland Key",
-  "item.iceandfire_dreadland.fireland_key.tooltip": "",
+  "item.iceandfire_dreadland.fireland_key.tooltip": "After the Dreadland was sealed away, its key was split into three parts and entrusted to three churches. When the three keys become one again, the gate to the Dreadland will open, and dread will sweep across the mortal realm once more!",
   "item.iceandfire_dreadland.iceland_key": "Iceland Key",
-  "item.iceandfire_dreadland.iceland_key.tooltip": "",
+  "item.iceandfire_dreadland.iceland_key.tooltip": "After the Dreadland was sealed away, its key was split into three parts and entrusted to three churches. When the three keys become one again, the gate to the Dreadland will open, and dread will sweep across the mortal realm once more!",
   "item.iceandfire_dreadland.lightning_key": "Lightning Key",
-  "item.iceandfire_dreadland.lightning_key.tooltip": "",
+  "item.iceandfire_dreadland.lightning_key.tooltip": "After the Dreadland was sealed away, its key was split into three parts and entrusted to three churches. When the three keys become one again, the gate to the Dreadland will open, and dread will sweep across the mortal realm once more!",
   
   "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire: Dread Land"
 }
