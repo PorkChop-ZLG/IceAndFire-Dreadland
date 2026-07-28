@@ -1,0 +1,15 @@
+{
+  "name": "iceandfire_dreadland:fire_church/fire_church_up_1_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "iceandfire_dreadland:fire_church/fire_church_up_1",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
