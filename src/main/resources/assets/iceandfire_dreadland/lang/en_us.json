@@ -21,9 +21,13 @@
   "entity.iceandfire_dreadland.lightning_church_pastor": "Lightning Church Pastor",
 
   "item.iceandfire_dreadland.dreadland_key": "Dreadland Key",
+  "item.iceandfire_dreadland.dreadland_key.tooltip": "",
   "item.iceandfire_dreadland.fireland_key": "Fireland Key",
+  "item.iceandfire_dreadland.fireland_key.tooltip": "",
   "item.iceandfire_dreadland.iceland_key": "Iceland Key",
+  "item.iceandfire_dreadland.iceland_key.tooltip": "",
   "item.iceandfire_dreadland.lightning_key": "Lightning Key",
+  "item.iceandfire_dreadland.lightning_key.tooltip": "",
   
   "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire: Dread Land"
 }

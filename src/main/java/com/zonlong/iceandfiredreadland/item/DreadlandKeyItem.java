@@ -6,14 +6,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class DreadlandKeyItem extends Item {
+public class DreadlandKeyItem extends KeyItem {
     public DreadlandKeyItem(Properties properties) {
         super(properties);
     }

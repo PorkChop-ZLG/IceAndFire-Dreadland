@@ -14,10 +14,10 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public final class DreadPortalShape {
-    private static final int MIN_WIDTH = 2;
-    public static final int MAX_WIDTH = 21;
-    private static final int MIN_HEIGHT = 3;
-    public static final int MAX_HEIGHT = 21;
+    private static final int PORTAL_WIDTH = 3;
+    public static final int MAX_WIDTH = PORTAL_WIDTH;
+    private static final int PORTAL_HEIGHT = 5;
+    public static final int MAX_HEIGHT = PORTAL_HEIGHT;
 
     private final LevelAccessor level;
     private final Direction.Axis axis;
@@ -79,7 +79,7 @@ public final class DreadPortalShape {
 
     private int calculateWidth() {
         int width = this.getDistanceUntilEdgeAboveFrame(this.bottomLeft, this.rightDir);
-        return width >= MIN_WIDTH && width <= MAX_WIDTH ? width : 0;
+        return width == PORTAL_WIDTH ? width : 0;
     }
 
     private int getDistanceUntilEdgeAboveFrame(BlockPos pos, Direction direction) {
@@ -107,7 +107,7 @@ public final class DreadPortalShape {
     private int calculateHeight() {
         BlockPos.MutableBlockPos cursor = new BlockPos.MutableBlockPos();
         int height = this.getDistanceUntilTop(cursor);
-        return height >= MIN_HEIGHT && height <= MAX_HEIGHT && this.hasTopFrame(cursor, height) ? height : 0;
+        return height == PORTAL_HEIGHT && this.hasTopFrame(cursor, height) ? height : 0;
     }
 
     private boolean hasTopFrame(BlockPos.MutableBlockPos cursor, int distanceToTop) {
@@ -158,10 +158,8 @@ public final class DreadPortalShape {
 
     public boolean isValid() {
         return this.bottomLeft != null
-                && this.width >= MIN_WIDTH
-                && this.width <= MAX_WIDTH
-                && this.height >= MIN_HEIGHT
-                && this.height <= MAX_HEIGHT;
+                && this.width == PORTAL_WIDTH
+                && this.height == PORTAL_HEIGHT;
     }
 
     public boolean isComplete() {
