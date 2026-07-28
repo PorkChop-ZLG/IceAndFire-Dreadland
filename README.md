@@ -8,7 +8,7 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 | --- | --- |
 | 模组名称 | Ice And Fire: Dread Land |
 | Mod ID | `iceandfire_dreadland` |
-| 当前版本 | `0.0.2` |
+| 当前版本 | `0.1.0` |
 | Minecraft | `1.21.1` |
 | Mod Loader | NeoForge `21.1.233` |
 | 许可证 | MIT |
@@ -23,12 +23,20 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 - 不同群系拥有独立的地表、植被、湖泊、树木和生物生成配置。
 - 使用 Ice And Fire 的冻结、龟裂和焦黑方块作为部分群系的地表材料。
 - 通过群系标签接入 Ice And Fire 的结构生成和生物生成，例如冰域、雷域和火域相关内容。
+- 生成冰霜、火焰和雷霆三类教堂，并通过排除区降低其与龙巢结构重叠的概率。
+
+### 教堂与钥匙
+
+- 三类教堂分别包含对应主题的牧师、试炼区域和奖励。
+- 完成冰霜、火焰和雷霆试炼可以分别获得冰域之钥、火域之钥和雷域之钥。
+- 三把区域钥匙可以无序合成为悚域之钥。
+- 四把钥匙均为稀有物品，并带有中英文说明文本。
 
 ### 悚域传送门
 
 - 添加方块：`iceandfire_dreadland:dread_portal`。
 - 使用 `#iceandfire_dreadland:dreadland_portal_frame` 标签中的方块搭建竖直矩形框架，默认框架方块为 `iceandfire:dread_stone`。
-- 框架遵循原版下界传送门尺寸规则：内部宽度为 2-21 格、内部高度为 3-21 格，四个角可以省略。
+- 框架外部尺寸固定为宽 5 格、高 7 格，内部传送门区域固定为宽 3 格、高 5 格，四个角可以省略。
 - 同一个框架可以混合使用标签中的不同方块；数据包可以向该标签追加兼容方块。
 - 使用悚域之钥右键框架朝向内部空间的一面即可激活。成功激活后，生存模式消耗一把钥匙，创造模式不消耗。
 - 由钥匙生成的传送门依赖框架存在；框架被破坏后，内部传送门方块会联动消失。
@@ -38,10 +46,13 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 - 生物抵达悚域后，如果目标位置不是传送门，会自动放置悚域出口结构。
 - 传送门包含自定义方块实体渲染、粒子效果、纹理和 Shader 效果。
 
-当前版本没有提供钥匙和传送门的合成配方，可以通过创造模式物品栏或命令获取：
+悚域之钥可以由冰域之钥、火域之钥和雷域之钥无序合成。调试时也可以通过创造模式物品栏或命令获取物品：
 
 ```mcfunction
 /give @s iceandfire_dreadland:dreadland_key
+/give @s iceandfire_dreadland:iceland_key
+/give @s iceandfire_dreadland:fireland_key
+/give @s iceandfire_dreadland:lightning_key
 /give @s iceandfire_dreadland:dread_portal
 ```
 
@@ -63,7 +74,7 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 | --- | --- |
 | Minecraft | `1.21.1` |
 | NeoForge | `21.1.233` 或更高的兼容版本 |
-| Ice And Fire: Community Edition | `1.21.1` 或更高的兼容版本 |
+| Ice And Fire: Community Edition | `2.0` 或更高的兼容版本 |
 | Jupiter | `2.3.7` 或更高版本 |
 
 ## 安装
@@ -109,7 +120,7 @@ Linux/macOS 下可以使用：
 构建产物位于：
 
 ```text
-build/libs/iceandfire_dreadland-0.0.2.jar
+build/libs/iceandfire_dreadland-0.1.0.jar
 ```
 
 ## 项目结构
@@ -119,6 +130,7 @@ src/main/java/                         Java 逻辑、注册表、事件和渲染
 src/main/resources/assets/             纹理、模型、语言文件、粒子和 Shader
 src/main/resources/data/               维度、群系、世界生成和标签数据
 docs/plans/                            功能设计和实现计划
+docs/known-issues.md                   已确认并计划后续处理的技术债
 .github/workflows/build.yml            GitHub Actions 构建流程
 ```
 
