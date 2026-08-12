@@ -16,6 +16,8 @@
   "config.iceandfire_dreadland.lightningDestructive": "强化雷域雷暴：闪电更加密集，产生火焰和破坏物品/方块",
   "config.iceandfire_dreadland.portalTeleportTick": "悚域传送门传送等待时间（tick）",
 
+  "dimension.iceandfire_dreadland.dreadland": "悚域",
+
   "entity.iceandfire_dreadland.fire_church_pastor": "火焰教堂牧师",
   "entity.iceandfire_dreadland.ice_church_pastor": "冰霜教堂牧师",
   "entity.iceandfire_dreadland.lightning_church_pastor": "雷霆教堂牧师",

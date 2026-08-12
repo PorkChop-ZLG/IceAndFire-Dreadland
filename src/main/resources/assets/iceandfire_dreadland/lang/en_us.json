@@ -16,6 +16,8 @@
   "config.iceandfire_dreadland.lightningDestructive": "Destructive Thunderstorm: More lightning, Fire/Block/Item destruction",
   "config.iceandfire_dreadland.portalTeleportTick": "Dread Portal Teleport Delay (ticks)",
 
+  "dimension.iceandfire_dreadland.dreadland": "Dreadland",
+
   "entity.iceandfire_dreadland.fire_church_pastor": "Fire Church Pastor",
   "entity.iceandfire_dreadland.ice_church_pastor": "Ice Church Pastor",
   "entity.iceandfire_dreadland.lightning_church_pastor": "Lightning Church Pastor",
