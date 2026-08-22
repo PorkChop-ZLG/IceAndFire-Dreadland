@@ -121,9 +121,8 @@ dependencies {
     // Jupiter — 配置系统库，本模组的硬前置依赖
     implementation "curse.maven:jupiter-1072905:7738312"
 
-    // 本地运行时依赖 — 仅在 runClient/runServer 时加载，不会随模组发布
-    // 这些模组是本模组在本地开发测试时需要的前置模组，但不声明为硬依赖
-    localRuntime "blank:uranus:2.4.1-1.21.1-neoforge"
+    // Uranus — Ice And Fire 的前置模组；本模组编译时需要访问其 API，因此作为编译时依赖
+    implementation "curse.maven:uranus-1010827:6979353"
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

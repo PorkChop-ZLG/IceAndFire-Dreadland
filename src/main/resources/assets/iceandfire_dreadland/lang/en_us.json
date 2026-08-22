@@ -30,7 +30,8 @@
   "item.iceandfire_dreadland.iceland_key.tooltip": "After the Dreadland was sealed away, its key was split into three parts and entrusted to three churches. When the three keys become one again, the gate to the Dreadland will open, and dread will sweep across the mortal realm once more!",
   "item.iceandfire_dreadland.lightning_key": "Lightning Key",
   "item.iceandfire_dreadland.lightning_key.tooltip": "After the Dreadland was sealed away, its key was split into three parts and entrusted to three churches. When the three keys become one again, the gate to the Dreadland will open, and dread will sweep across the mortal realm once more!",
-  
+  "item.iceandfire_dreadland.dread_queen_icon": "Dread Queen Icon",
+
   "itemGroup.iceandfire_dreadland.blocks": "Ice And Fire: Dread Land",
 
 	"structure.iceandfire_dreadland.fire_church": "Fire Church",
