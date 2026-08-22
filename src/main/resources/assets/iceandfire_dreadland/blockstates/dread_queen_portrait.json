@@ -1,0 +1,139 @@
+﻿{
+    "variants":  {
+                     "facing=north,x_offset=0,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_0",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=0,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_1",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=0,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_2",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=1,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_0",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=1,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_1",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=1,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_2",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=2,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_0",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=2,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_1",
+                                                                "y":  180
+                                                            },
+                     "facing=north,x_offset=2,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_2",
+                                                                "y":  180
+                                                            },
+                     "facing=south,x_offset=0,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_0"
+                                                            },
+                     "facing=south,x_offset=0,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_1"
+                                                            },
+                     "facing=south,x_offset=0,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_2"
+                                                            },
+                     "facing=south,x_offset=1,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_0"
+                                                            },
+                     "facing=south,x_offset=1,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_1"
+                                                            },
+                     "facing=south,x_offset=1,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_2"
+                                                            },
+                     "facing=south,x_offset=2,y_offset=0":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_0"
+                                                            },
+                     "facing=south,x_offset=2,y_offset=1":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_1"
+                                                            },
+                     "facing=south,x_offset=2,y_offset=2":  {
+                                                                "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_2"
+                                                            },
+                     "facing=east,x_offset=0,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_0",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=0,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_1",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=0,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_2",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=1,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_0",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=1,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_1",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=1,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_2",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=2,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_0",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=2,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_1",
+                                                               "y":  270
+                                                           },
+                     "facing=east,x_offset=2,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_2",
+                                                               "y":  270
+                                                           },
+                     "facing=west,x_offset=0,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_0",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=0,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_1",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=0,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_0_2",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=1,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_0",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=1,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_1",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=1,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_1_2",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=2,y_offset=0":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_0",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=2,y_offset=1":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_1",
+                                                               "y":  90
+                                                           },
+                     "facing=west,x_offset=2,y_offset=2":  {
+                                                               "model":  "iceandfire_dreadland:block/dread_queen_portrait_2_2",
+                                                               "y":  90
+                                                           }
+                 }
+}

@@ -14,7 +14,7 @@ public final class ModCreativeModeTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS = REGISTRY.register("blocks",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + IceAndFireDreadLand.MODID + ".blocks"))
-                    .icon(() -> new ItemStack(ModItems.DREAD_QUEEN_ICON.get()))
+                    .icon(() -> new ItemStack(ModItems.DREAD_QUEEN_PORTRAIT.get()))
                     .displayItems((parameters, output) -> ModItems.REGISTRY.getEntries()
                             .forEach(item -> output.accept(item.get())))
                     .build());

@@ -9,6 +9,7 @@
   "biome.iceandfire_dreadland.lightning_plains": "雷域平原",
   
   "block.iceandfire_dreadland.dread_portal": "悚域传送门",
+  "block.iceandfire_dreadland.dread_queen_portrait": "悚怖女皇画像",
 
   "config.iceandfire_dreadland.category.common": "通用",
   "config.iceandfire_dreadland.category.lightning": "雷域",
@@ -30,7 +31,7 @@
   "item.iceandfire_dreadland.iceland_key.tooltip": "悚域被封印后，悚域之钥被拆分成三份，交由三座教堂看守。当三把钥匙再度合一，悚域的大门被推开，悚怖将再度席卷人间！",
   "item.iceandfire_dreadland.lightning_key": "雷域之钥",
   "item.iceandfire_dreadland.lightning_key.tooltip": "悚域被封印后，悚域之钥被拆分成三份，交由三座教堂看守。当三把钥匙再度合一，悚域的大门被推开，悚怖将再度席卷人间！",
-  "item.iceandfire_dreadland.dread_queen_icon": "悚怖女王图标",
+  "item.iceandfire_dreadland.dread_queen_portrait": "悚怖女皇画像",
 
   "itemGroup.iceandfire_dreadland.blocks": "冰火传说：悚域",
 
