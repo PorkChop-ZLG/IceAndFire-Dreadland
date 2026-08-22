@@ -5,7 +5,6 @@ import com.zonlong.iceandfiredreadland.registry.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -30,10 +29,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class DreadQueenPortraitBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
     public static final int SIZE = 3;
@@ -42,16 +38,14 @@ public class DreadQueenPortraitBlock extends HorizontalDirectionalBlock implemen
     public static final IntegerProperty Y_OFFSET = IntegerProperty.create("y_offset", 0, SIZE - 1);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    private static final Map<Level, Set<BlockPos>> CREATIVE_SUPPRESSED_DROPS = new java.util.IdentityHashMap<>();
-
     private static final MapCodec<DreadQueenPortraitBlock> CODEC = simpleCodec(s -> new DreadQueenPortraitBlock());
     private static final SoundType PAINTING_SOUND_TYPE = new SoundType(
             1.0F, 1.0F,
             SoundEvents.PAINTING_BREAK,
-            SoundEvents.PAINTING_BREAK,
+            SoundEvents.WOOL_STEP,
             SoundEvents.PAINTING_PLACE,
-            SoundEvents.PAINTING_BREAK,
-            SoundEvents.PAINTING_BREAK
+            SoundEvents.WOOL_HIT,
+            SoundEvents.WOOL_FALL
     );
     private static final VoxelShape SHAPE_SOUTH = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 1.0D);
     private static final VoxelShape SHAPE_NORTH = Block.box(0.0D, 0.0D, 15.0D, 16.0D, 16.0D, 16.0D);
@@ -102,25 +96,29 @@ public class DreadQueenPortraitBlock extends HorizontalDirectionalBlock implemen
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         if (!level.isClientSide && player.isCreative()) {
-            CREATIVE_SUPPRESSED_DROPS.computeIfAbsent(level, l -> new HashSet<>()).add(getMasterPos(state, pos));
+            BlockPos masterPos = getMasterPos(state, pos);
+            Direction facing = state.getValue(FACING);
+            Direction right = facing.getCounterClockWise();
+            if (level.getBlockState(masterPos).is(this)) {
+                level.removeBlock(masterPos, false);
+            }
+            for (int x = 0; x < SIZE; x++) {
+                for (int y = 0; y < SIZE; y++) {
+                    BlockPos p = masterPos.relative(right, x).below(y);
+                    if (level.getBlockState(p).is(this)) {
+                        level.removeBlock(p, false);
+                    }
+                }
+            }
         }
         return super.playerWillDestroy(level, pos, state, player);
     }
 
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (!state.is(newState.getBlock()) && isMaster(state)) {
-            Set<BlockPos> suppressed = CREATIVE_SUPPRESSED_DROPS.get(level);
-            boolean creative = suppressed != null && suppressed.remove(pos);
-            if (!creative) {
-                Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ModItems.DREAD_QUEEN_PORTRAIT.get()));
-            }
-        }
-        super.onRemove(state, level, pos, newState, movedByPiston);
-    }
-
-    @Override
     protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        if (isMaster(state)) {
+            return List.of(new ItemStack(ModItems.DREAD_QUEEN_PORTRAIT.get()));
+        }
         return List.of();
     }
 
@@ -154,6 +152,9 @@ public class DreadQueenPortraitBlock extends HorizontalDirectionalBlock implemen
             BlockPos masterPos = getMasterPos(state, pos);
             Direction facing = state.getValue(FACING);
             Direction right = facing.getCounterClockWise();
+            if (level.getBlockState(masterPos).is(this)) {
+                level.destroyBlock(masterPos, true);
+            }
             for (int x = 0; x < SIZE; x++) {
                 for (int y = 0; y < SIZE; y++) {
                     BlockPos p = masterPos.relative(right, x).below(y);

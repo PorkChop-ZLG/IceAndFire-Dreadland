@@ -14,6 +14,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
 
 public class DreadQueenPortraitItem extends Item {
@@ -44,7 +45,7 @@ public class DreadQueenPortraitItem extends Item {
             for (int y = 0; y < DreadQueenPortraitBlock.SIZE; y++) {
                 BlockPos p = master.relative(right, x).below(y);
                 BlockState current = level.getBlockState(p);
-                if (!current.isAir() && !current.getFluidState().is(Fluids.WATER)) {
+                if (!current.canBeReplaced()) {
                     return InteractionResult.FAIL;
                 }
             }
@@ -63,8 +64,10 @@ public class DreadQueenPortraitItem extends Item {
                             .setValue(DreadQueenPortraitBlock.WATERLOGGED, waterlogged), Block.UPDATE_CLIENTS);
                 }
             }
+            level.gameEvent(GameEvent.BLOCK_PLACE, center, GameEvent.Context.of(player, base));
+            level.updateNeighborsAt(center, ModBlocks.DREAD_QUEEN_PORTRAIT.get());
             level.playSound(player, center, SoundEvents.PAINTING_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
-            stack.shrink(1);
+            stack.consume(1, player);
         }
 
         return InteractionResult.sidedSuccess(level.isClientSide);

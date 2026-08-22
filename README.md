@@ -8,7 +8,7 @@ Ice And Fire: Dread Land 是 Ice And Fire: Community Edition 的 NeoForge 附属
 | --- | --- |
 | 模组名称 | Ice And Fire: Dread Land |
 | Mod ID | `iceandfire_dreadland` |
-| 当前版本 | `0.1.0` |
+| 当前版本 | `0.1.2` |
 | Minecraft | `1.21.1` |
 | Mod Loader | NeoForge `21.1.233` |
 | 许可证 | MIT |
@@ -120,7 +120,7 @@ Linux/macOS 下可以使用：
 构建产物位于：
 
 ```text
-build/libs/iceandfire_dreadland-0.1.0.jar
+build/libs/iceandfire_dreadland-0.1.2.jar
 ```
 
 ## 项目结构
