@@ -31,5 +31,9 @@
   "item.iceandfire_dreadland.lightning_key": "雷域之钥",
   "item.iceandfire_dreadland.lightning_key.tooltip": "悚域被封印后，悚域之钥被拆分成三份，交由三座教堂看守。当三把钥匙再度合一，悚域的大门被推开，悚怖将再度席卷人间！",
 
-  "itemGroup.iceandfire_dreadland.blocks": "冰火传说：悚域"
+  "itemGroup.iceandfire_dreadland.blocks": "冰火传说：悚域",
+
+	"structure.iceandfire_dreadland.fire_church": "烈火教堂",
+	"structure.iceandfire_dreadland.ice_church": "寒冰教堂",
+	"structure.iceandfire_dreadland.lightning_church": "雷电教堂"
 }

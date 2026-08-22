@@ -1,3 +1,6 @@
 {
-  "parent": "iceandfire_dreadland:block/dread_portal"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "iceandfire_dreadland:item/dread_portal"
+  }
 }
