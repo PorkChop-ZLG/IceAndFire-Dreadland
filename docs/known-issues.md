@@ -1,39 +1,66 @@
 # 待修复问题
 
-本文档记录已经确认、但计划在后续版本中处理的技术债。当前版本不改变相关行为。
+本文档记录已经确认、但计划在后续版本中处理的技术债。
 
-## 2026-10-15 传送门复核与执行计划
+## 2026-10-15 传送门修复执行结果
 
-以下两项传送门技术债均已复核，当前仍未修复，分别对应 DP-006 和 DP-007；内部面无条件提交也已确认。完整九项问题及证据见[悚域传送门审查报告](code-review-dread-portal-2026-10-15.md)，实施顺序和验收要求见[DeepSeek 修复计划](plans/2026-10-15-dread-portal-fix-plan.md)。
+完整九项问题及证据见[悚域传送门审查报告](code-review-dread-portal-2026-10-15.md)，实施顺序和验收要求见[修复计划](plans/2026-10-15-dread-portal-fix-plan.md)。
 
-本轮只编写文档，修复由用户转交给 DeepSeek；不得因计划已经完成而将问题状态改为已解决。
+T0–T8 已实施。下表区分「已改代码」与「已验证」，**未验证的项目不得当作通过**。
+
+| 编号 | 问题 | 代码状态 | 验证状态 |
+| --- | --- | --- | --- |
+| DP-001 | 双向无安全落点 | 已实现 | GameTest 覆盖安全/熔岩/水/无支撑/预算/失败不带坐标 |
+| DP-002 | 出口覆盖建筑 | 已实现 | GameTest 覆盖容器、实心建筑、基岩、回滚、等待点 |
+| DP-003 | Iris 屏蔽自定义 Shader | **未实现** | 未验证 |
+| DP-004 | 换维度失败无回滚 | 已实现 | GameTest 覆盖维度缺失；取消路径待实测 |
+| DP-005 | 归零后离门仍传送 | 已实现 | GameTest 覆盖 |
+| DP-006 | 全生物附件开销 | 已实现 | GameTest 覆盖附件生命周期；大量生物性能待实测 |
+| DP-007 | RenderType 重复创建 | 已实现 | 面数已由 GameTest 验证；RenderType 实例身份与实机画面待实测 |
+| DP-008 | HUD 计数无上限 | 已实现 | 进度数学已由 GameTest 验证；遮罩画面与断线清理待实测 |
+| DP-009 | 跳过传送资格检查 | 已实现 | GameTest 覆盖乘客/载客/死亡实体 |
+
+已执行的验证：`gradlew build --offline --no-daemon`（成功）与
+`gradlew runGameTestServer --offline --no-daemon`（51 项全部通过）。
+日志位于 `build/reports/dread-portal/`。
+
+尚未执行、因此不能宣称通过的项目：
+
+- **真实跨维度往返**。GameTestServer 用 `WorldPresets.FLAT` 构建世界，只注册
+  `minecraft:overworld`、`minecraft:the_end`、`minecraft:the_nether`，不含悚域维度，
+  因此自动化用例无法验证成功抵达、出口生成与返程。需在正式客户端/服务端实测。
+- **客户端画面**：传送门外观、Shader、HUD 遮罩、光影开启/关闭与切换（DP-003、DP-007、DP-008）。
+- **性能对照**：大量生物时的 tick 开销、附件数量与网络包数量（DP-006）。
+- **旧存档加载**：带旧 `portal_data` 附件的实体实际反序列化（当前只用 Codec 直接验证）。
 
 ## 传送门附件作用于所有生物
 
-**状态：** 待优化
+**状态：** 已修复（DP-006）
 
-`ModAttachments.onLivingTick` 当前会在每个生物的每个 tick 中调用 `getData()`。这会为从未接触过悚域传送门的生物创建、持久化并可能同步 `PortalData`，增加服务端内存、存档和网络开销。传送倒计时变化时还会逐 tick 同步附件。
+`ModAttachments.onLivingTick` 已改为：仅服务端推进；未接触且从未持有状态时直接返回，
+不再调用 `getData()`；附件在回到空闲时用 `removeData` 移除；注册时移除了
+`.sync(...)` 与 `.copyOnDeath()`。旧存档字段名保持不变，旧数据一律归一化为空闲。
 
-后续修复应满足：
-
-- 仅为接触悚域传送门或已经持有相关状态的实体创建和更新附件。
-- 仅由服务端更新权威传送状态，客户端通过同步数据负责显示。
-- 减少倒计时同步频率，同时保持传送判定和界面效果一致。
-- 验证大量生物存在时的 tick 时间、附件数量和网络包数量。
-
-相关文件：`src/main/java/com/zonlong/iceandfiredreadland/registry/ModAttachments.java`、`src/main/java/com/zonlong/iceandfiredreadland/data/component/PortalData.java`。
+相关文件：`src/main/java/com/zonlong/iceandfiredreadland/registry/ModAttachments.java`、
+`src/main/java/com/zonlong/iceandfiredreadland/data/component/PortalData.java`。
 
 ## 传送门 RenderType 重复创建
 
-**状态：** 待优化
+**状态：** 已修复（DP-007）
 
-`DreadPortalBlockEntityRenderer` 每次渲染传送门方块时都会调用 `ModRenderTypes.getDreadlandsPortal()`，而该方法会重新执行 `RenderType.create()`。这会产生不必要的对象分配，并影响渲染缓冲复用。
+`ModRenderTypes` 现在持有单个静态 `RenderType` 实例，Shader 仍由 `ShaderStateShard`
+的 supplier 延迟取用，因此资源重载后仍会采用新实例。渲染器按相邻门块剔除内部面：
+完整 `3×5` 实心墙由 90 个提交面降至 46 个外表面，剔除 44 个内部面（已由 GameTest 验证）。
 
-后续修复应满足：
+相关文件：`src/main/java/com/zonlong/iceandfiredreadland/registry/ModRenderTypes.java`、
+`src/main/java/com/zonlong/iceandfiredreadland/render/DreadPortalBlockEntityRenderer.java`、
+`src/main/java/com/zonlong/iceandfiredreadland/world/portal/DreadPortalGeometry.java`。
 
-- 将悚域传送门的 `RenderType` 缓存为稳定的静态实例。
-- 保持 Shader 在客户端注册完成后可以正常取得。
-- 检查相邻传送门方块的内部面是否可以跳过，降低重复绘制和 overdraw。
-- 在 X、Z 两种朝向的完整 `3×5` 传送门区域中验证纹理、Shader 和透明渲染顺序。
+## Iris 光影下自定义 Shader 被屏蔽
 
-相关文件：`src/main/java/com/zonlong/iceandfiredreadland/registry/ModRenderTypes.java`、`src/main/java/com/zonlong/iceandfiredreadland/render/DreadPortalBlockEntityRenderer.java`。
+**状态：** 待修复（DP-003）
+
+在启用光影时，Iris 默认拒绝非 `ExtendedShader`/`FallbackShader` 的自定义核心 Shader，
+当前门面会走被屏蔽的路径。本项尚未实现，需要客户端实测确认画面。
+
+要求见审查报告 DP-003 与计划 T6。

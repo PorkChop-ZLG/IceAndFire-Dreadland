@@ -3,7 +3,6 @@ package com.zonlong.iceandfiredreadland.block;
 import com.mojang.serialization.MapCodec;
 import com.zonlong.iceandfiredreadland.block.entity.DreadPortalBlockEntity;
 import com.zonlong.iceandfiredreadland.registry.ModParticles;
-import com.zonlong.iceandfiredreadland.util.DreadBlock;
 import com.zonlong.iceandfiredreadland.world.portal.DreadPortalShape;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,7 +28,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class DreadPortalBlock extends BaseEntityBlock implements DreadBlock {
+public class DreadPortalBlock extends BaseEntityBlock {
     private static final MapCodec<? extends BaseEntityBlock> CODEC = simpleCodec(s -> new DreadPortalBlock());
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
     public static final BooleanProperty FRAME_BOUND = BooleanProperty.create("frame_bound");
@@ -42,7 +41,9 @@ public class DreadPortalBlock extends BaseEntityBlock implements DreadBlock {
                 .dynamicShape()
                 .strength(-1, 100000)
                 .lightLevel((state) -> 1)
-                .randomTicks());
+                // 门块没有随机 tick 行为；粒子由客户端的 animateTick 负责，
+                // 声明 randomTicks() 只会让服务端为每个门块安排无用的随机 tick。
+        );
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(AXIS, Direction.Axis.X)
                 .setValue(FRAME_BOUND, false));
@@ -53,15 +54,13 @@ public class DreadPortalBlock extends BaseEntityBlock implements DreadBlock {
         BlockEntity tileentity = world.getBlockEntity(pos);
 
         if (tileentity instanceof DreadPortalBlockEntity) {
-            int i = 3;
-            for (int j = 0; j < i; ++j) {
+            for (int j = 0; j < 3; ++j) {
                 double d0 = (float) pos.getX() + rand.nextFloat();
                 double d1 = (float) pos.getY() + rand.nextFloat();
                 double d2 = (float) pos.getZ() + rand.nextFloat();
                 double d3 = ((double) rand.nextFloat() - 0.5D) * 0.25D;
                 double d4 = ((double) rand.nextFloat()) * -0.25D;
                 double d5 = ((double) rand.nextFloat() - 0.5D) * 0.25D;
-                int k = rand.nextInt(2) * 2 - 1;
                 world.addParticle(ModParticles.DREAD_PORTAL.get(), d0, d1, d2, d3, d4, d5);
             }
         }

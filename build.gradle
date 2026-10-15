@@ -1,3 +1,6 @@
+import net.neoforged.gradle.dsl.common.extensions.sourceset.SourceSetDependencyExtension
+import net.neoforged.gradle.dsl.common.extensions.sourceset.SourceSetInheritanceExtension
+
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -25,6 +28,30 @@ sourceSets.main.resources {
     exclude("src/generated/**/.cache") // datagen cache files
 }
 
+// === GameTest 隔离 source set ===
+// 测试源码与测试资源放在 src/gametest/ 下，通过 NeoGradle 的 source set 继承拿到与 main
+// 相同的 Minecraft/NeoForge/前置模组 classpath，同时不进入正式模组 JAR。
+sourceSets {
+    gametest {
+        java.srcDir 'src/gametest/java'
+        resources.srcDir 'src/gametest/resources'
+    }
+}
+
+// inherits.from 提供编译与运行依赖；depends.on 建立 main -> gametest 的产物依赖顺序。
+sourceSets.gametest.extensions.configure(SourceSetInheritanceExtension) { ext ->
+    ext.from(sourceSets.main)
+}
+sourceSets.gametest.extensions.configure(SourceSetDependencyExtension) { ext ->
+    ext.on(sourceSets.main)
+}
+
+// 继承 main 后，processGametestResources 会与 main 已处理的资源输出重叠，
+// 内容相同，因此显式允许覆盖而不是让构建失败。
+tasks.named('processGametestResources', ProcessResources).configure {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 repositories {
     // CurseMaven 仓库 — 用于获取 CurseForge 上的模组依赖
     maven {
@@ -47,7 +74,9 @@ base {
 // Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-//minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
+// 访问转换器：悚域出口放置需要读取 StructureTemplate 的完整调色板。
+// 公开 API 只有按方块过滤的 filterBlocks(...)，无法取回全部方块。
+minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 //minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager
 
 // Default run configurations.
@@ -87,6 +116,11 @@ runs {
     // The gametest system is also enabled by default for other run configs under the /test command.
     gameTestServer {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        // 让 GameTest 源码/资源作为附加 mod 源参与运行，但不进入正式 JAR。
+        modSources.add(project.sourceSets.gametest)
+        // NeoGradle 只把 gametest 的类目录接入运行；测试资源（结构模板等）必须显式补进运行时
+        // classpath，否则 GameTestServer 会报 "Missing test structure"。
+        runtimeClasspath(project.sourceSets.gametest.output)
     }
 
     data {

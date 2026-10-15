@@ -37,5 +37,12 @@
 
 	"structure.iceandfire_dreadland.fire_church": "Fire Church",
 	"structure.iceandfire_dreadland.ice_church": "Ice Church",
-	"structure.iceandfire_dreadland.lightning_church": "Lightning Church"
+	"structure.iceandfire_dreadland.lightning_church": "Lightning Church",
+
+	"message.iceandfire_dreadland.portal.no_safe_destination": "No safe landing spot was found on the other side of the Dread Portal.",
+	"message.iceandfire_dreadland.portal.exit_blocked": "The exit is blocked by a structure or container and cannot be opened safely.",
+	"message.iceandfire_dreadland.portal.travel_cancelled": "Travel was prevented. Leave the portal and try again.",
+	"message.iceandfire_dreadland.portal.placement_failed": "Building the exit failed and was rolled back. Leave the portal and try again.",
+	"message.iceandfire_dreadland.portal.ineligible": "This creature cannot use the Dread Portal.",
+	"message.iceandfire_dreadland.portal.dimension_unavailable": "The Dreadland is currently unavailable."
 }

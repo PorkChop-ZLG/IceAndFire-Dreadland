@@ -37,5 +37,12 @@
 
 	"structure.iceandfire_dreadland.fire_church": "烈火教堂",
 	"structure.iceandfire_dreadland.ice_church": "寒冰教堂",
-	"structure.iceandfire_dreadland.lightning_church": "雷电教堂"
+	"structure.iceandfire_dreadland.lightning_church": "雷电教堂",
+
+	"message.iceandfire_dreadland.portal.no_safe_destination": "悚域之门对面找不到安全的落脚点。",
+	"message.iceandfire_dreadland.portal.exit_blocked": "出口被建筑或容器阻挡，无法安全开启。",
+	"message.iceandfire_dreadland.portal.travel_cancelled": "传送被阻止，请离开传送门后重试。",
+	"message.iceandfire_dreadland.portal.placement_failed": "出口生成失败，已回滚。请离开传送门后重试。",
+	"message.iceandfire_dreadland.portal.ineligible": "这个生物无法使用悚域传送门。",
+	"message.iceandfire_dreadland.portal.dimension_unavailable": "悚域当前不可用。"
 }

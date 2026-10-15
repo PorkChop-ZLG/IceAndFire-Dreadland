@@ -335,3 +335,57 @@ git diff --check
 > 请依据 `docs/plans/2026-10-15-dread-portal-fix-plan.md` 修复悚域传送门模块，并结合 `docs/code-review-dread-portal-2026-10-15.md` 逐项处理 DP-001 至 DP-009。先核对当前代码与基线差异，保留我的其他修改，按 T0–T9 实施与验证。不要更改既定传送方向、框架尺寸、旧门注册 ID、前置版本或无关模块。遇到 API 与方案不符时，先给出证据并更新计划，不用猜测替代验收。请分别报告已实现和已验证的项目；未运行的游戏画面、GameTest 或网络/性能检查不能写成通过。不要擅自推送、合并或发布。
 
 当前交接状态：仅审查报告和计划就绪，T0–T9 均未开始，九项问题均未修复。
+
+---
+
+# 执行状态（2026-10-15 由 DeepSeek 更新）
+
+T0–T5、T7、T8 已实施；T6 未实施；T9 的文档更新已完成，但部分验收证据仍缺失。
+
+## 已完成任务
+
+| 任务 | 状态 | 主要证据 |
+| --- | --- | --- |
+| T0 GameTest 隔离 source set | 完成 | 测试被发现并执行；正式 JAR 不含测试类与模板 |
+| T1 接触驱动状态、旧存档兼容 | 完成 | 状态机与附件生命周期用例通过 |
+| T2 双向安全目标解析 | 完成 | 安全/熔岩/水/无支撑/预算/失败不带坐标 |
+| T3 受保护出口放置与回滚 | 完成 | 容器保物品、实心建筑保持、基岩、回滚、等待点 |
+| T4 旅行服务、失败处理、实体资格 | 完成 | 资格拒绝与维度缺失；成功往返见下「未验证」 |
+| T5 RenderType 缓存与内部面剔除 | 完成 | 3×5 实心墙 90 → 46 面，剔除 44 内部面 |
+| T7 HUD 有界进度与生命周期 | 完成 | 进度有界、淡出时长与停留时长无关、N=0 安全 |
+| T8 清理闲置代码与框架回归 | 完成 | 框架尺寸/四角/混合标签/拆框/旧无框出口/注册 ID |
+| T6 Iris 可选兼容渲染 | **未开始** | 需要客户端实测 |
+| T9 验收与文档 | 部分完成 | 本文档、known-issues、README 已更新；证据未齐全 |
+
+执行命令与结果：
+
+```powershell
+.\gradlew.bat build --offline --no-daemon               # BUILD SUCCESSFUL
+.\gradlew.bat runGameTestServer --offline --no-daemon   # All 51 required tests passed :)
+```
+
+日志位于 `build/reports/dread-portal/`。
+
+## 与计划的偏差（需用户确认）
+
+1. **新增访问转换器**。计划文件范围未包含 `src/main/resources/META-INF/accesstransformer.cfg`。
+   原因：公开 API 的 `filterBlocks(pos, settings, block)` 按方块过滤，传 `null` 会 NPE，
+   无法取得完整写集；`palettes` 为 private 且 NeoForge 未提供访问器。故通过 AT 读取。
+   若 Mojang 更名该字段，此依赖会失效。
+2. **GameTest 测试资源放在独立 source set**。计划要求「不打包到正式模组 JAR」，
+   已按字面满足（资源在 `src/gametest/resources`，JAR 已验证干净），代价是
+   `build.gradle` 需要适配 NeoGradle 的 source set 机制。
+3. **T8 的部分清理项提前在 T1 完成**（删除 `IafEntityAttachment`、`NeedUpdateData`）。
+4. **`ModRenderTypes` 不再继承 `RenderType`**。继承无法编译（父类无可用构造器），
+   而所需构建入口在 1.21.1 中本就是公开的。
+
+## 仍未验证、不得视为通过的项目
+
+- **真实跨维度往返**：GameTestServer 使用 `WorldPresets.FLAT`，实测注册的 level stem 只有
+  `minecraft:overworld`、`minecraft:the_end`、`minecraft:the_nether`，不含悚域维度。
+  因此自动化用例只覆盖了资格拒绝与维度缺失路径；成功抵达、出口生成与返程需在正式
+  客户端/服务端实测。
+- **客户端画面**：传送门外观、Shader、HUD 遮罩，以及光影开启/关闭/切换（DP-003、DP-007、DP-008）。
+- **性能对照**：大量生物时的 tick 开销、附件数量与网络包数量（DP-006）。
+- **旧存档加载**：带旧 `portal_data` 附件的真实实体反序列化。
+- **旅行事件取消路径**：`TRAVEL_CANCELLED` 分支尚无自动化用例。
